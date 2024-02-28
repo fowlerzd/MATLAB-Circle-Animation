@@ -14,12 +14,12 @@ for i = linspace(1, 8, 8)
     y(i, 1:64) = sin(t(i,1:64));
 end
 
-colors = [[1 0 0], [0 1 1]];
+colors = ["red", "black"];
 
 % generate points
 for i = 1:64
     for ii = 1:8
-    scatter(x(ii,i), y(ii,i), 40, color(mod(i,2)+1), "o")
+    scatter(x(ii,i), y(ii,i), 40, colors(mod(i,2)+1), "o")
     hold("on")
     end
 
