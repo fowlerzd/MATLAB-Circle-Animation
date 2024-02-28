@@ -1,25 +1,27 @@
-% time sets for funtions
-offset = linspace(1, 8, 8);
+num_points = 2;
 
-spacing = 4;
+offset = 1:num_points;
+frames = 1:64;
 
-% make list of times with offsets
-for i = linspace(1, 8, 8)
-    t(i, 1:64) = linspace(-(offset(i)*pi/spacing), (2*pi) - (offset(1)*pi/spacing), 64);
+spacing = num_points/2;
+
+% make time sets with offsets
+for i = offset
+    t(i, frames) = linspace(-(offset(i)*pi/spacing), (2*pi) - (offset(i)*pi/spacing), 64);
 end
 
 % generate functions
-for i = linspace(1, 8, 8)
-    x(i, 1:64) = cos(t(i,1:64));
-    y(i, 1:64) = sin(t(i,1:64));
+for i = offset
+    x(i, frames) = cos(t(i, frames));
+    y(i, frames) = sin(t(i, frames));
 end
 
 colors = ["red", "black"];
 
 % generate points
-for i = 1:64
-    for ii = 1:8
-    scatter(x(ii,i), y(ii,i), 40, colors(mod(i,2)+1), "o")
+for i = frames
+    for ii = offset
+    scatter(x(ii,i), y(ii,i), 40, colors(mod(i,2)+1), "o", "filled")
     hold("on")
     end
 
