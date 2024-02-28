@@ -1,11 +1,11 @@
 % time sets for funtions
-offset = linspace(0, 8, 8);
+offset = linspace(1, 8, 8);
 
 spacing = 4;
 
 % make list of times with offsets
 for i = linspace(1, 8, 8)
-    t(i, 1:64) = linspace(-(offset(1)*pi/spacing), (2*pi) - (offset(1)*pi/spacing), 64);
+    t(i, 1:64) = linspace(-(offset(i)*pi/spacing), (2*pi) - (offset(1)*pi/spacing), 64);
 end
 
 % generate functions
