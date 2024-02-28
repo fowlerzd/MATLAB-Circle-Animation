@@ -1,5 +1,5 @@
 frames = 1:64;
-for points = 1:10
+for points = 1:7
     num_points = points;
     
     offset = 1:num_points;
@@ -17,12 +17,12 @@ for points = 1:10
         y(i, frames) = sin(t(i, frames));
     end
     
-    colors = ["red", "black"];
+    colors = ["red", "green", "blue", "cyan", "magenta", "yellow", "black"];
     
     % generate points
     for i = frames
         for ii = offset
-        scatter(x(ii,i), y(ii,i), 40, colors(mod(i,2)+1), "o", "filled")
+        scatter(x(ii,i), y(ii,i), 40, colors(mod(i,num_points)+1), "o", "filled")
         hold("on")
         end
     
